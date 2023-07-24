@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Edit Page</title>
+  </head>
+
+  <body>
+  <h1>Edit Your Data</h1>
+  <form action="/update/{{ object_data.id }}" method="POST">
+    {% csrf_token %}
+    Enter Name:
+    <input type="text" name="name" value="{{object_data.name}}">
+    <br/>
+    Enter Age:
+    <input type="text" name="age" value="{{object_data.age}}">
+    <br/>
+
+    Enter Address:
+    <textarea name="address">{{object_data.address}}</textarea>
+
+    <button type="submit">Update Your Record</button>
+
+  </form>
+  </body>
+</html>
